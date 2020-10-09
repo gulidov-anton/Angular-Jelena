@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document8</title>
+</head>
+
+<body>
+	<input type="button" value="Заблокирован" onclick="Locked()" class="button-locked" style="color: red">
+	<input type="button" value="Разблокирован" onclick="Unlocked()" class="button-unlocked">
+	<input type="text" class="text" value="Нажми на кнопку - получишь результат!" size="50">
+
+	<script>
+		function Locked() {
+			let textLocked = document.querySelector('.text');
+			textLocked.disabled = true;
+			textLocked.value = "Заблокирован";
+			textLocked.style.color = "red";
+		}
+
+		function Unlocked() {
+			let textUnlocked = document.querySelector('.text');
+			textUnlocked.disabled = false;
+			textUnlocked.value = "Разблокирован";
+			textUnlocked.style.color = "black";
+		}
+	</script>
+</body
+</html>

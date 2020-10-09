@@ -3,17 +3,27 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document5</title>
+	<title>Document6</title>
+	<style>
+		::placeholder {
+			color: red;
+		}
+		.text {
+			color: red;
+		}
+	</style>
 </head>
 
 <body>
 	<input type="button" value="Нажми на меня" onclick="Click()" class="button">
+	<input type="text" class="text" placeholder="какой-то текст">
 
 	<script type="text/javascript">
 		function Click() {
-    		let content = document.querySelector('.button');
-    		content.value = "Не так грубо! Обнови страницу и нажми нежнее";
+    		let content = document.querySelector('.text');
+    		content.style.color = "black";
 		}
 	</script>
+
 </body
 </html>

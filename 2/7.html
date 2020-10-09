@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document7</title>
+</head>
+
+<body>
+	<input type="button" value="Нажми на меня" onclick="Click()" class="button">
+	<input type="text" class="text0" value="Привед медвед">
+	<input type="text" class="text1" value="Йа креведко">
+
+	<script type="text/javascript">
+		function Click() {
+			let contentText0 = document.querySelector('.text0');
+			let contentText1 = document.querySelector('.text1');
+			let contentMiddle;
+			contentMiddle = contentText0.value;
+			contentText0.value = contentText1.value
+			contentText1.value = contentMiddle;
+		}
+	</script>
+</body
+</html>
