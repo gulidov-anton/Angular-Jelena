@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Constructor</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<h1>Constructor</h1>
+	<form id="constructor">
+		<input type="text" placeholder="title" id="title" value = 'title'>
+		<input type="text" placeholder="description" id="description" value = 'description'>
+		<button onclick="getData()" id="btn-submit">Generate</button>
+	</form>
+	<script type="text/javascript">
+		function getData() {
+			let htmlPage = "";
+
+			let titleValue = title.value;
+			let descriptionValue = description.value;
+			htmlPage = "<h1>" + titleValue + "</h1>" + "<p>" + descriptionValue + "</p>"
+			document.body.innerHTML = htmlPage;
+		}
+	</script>
+</body>
+</html>
