@@ -62,7 +62,7 @@ function getData(){
     newHTML += menuItem;
 
     //основной текстовый блок
-    let p = '<p class = "paragraph" style="color: ' + colorText + '">' + mainText + '</p></section></div>';
+    let p = `<p class = "paragraph" style="color:${colorText}">${mainText}</p></section></div>`;
     newHTML += p;
 
     document.body.innerHTML = newHTML;
