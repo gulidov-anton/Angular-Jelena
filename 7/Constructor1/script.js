@@ -36,7 +36,7 @@ function getData(){
     let listItems = [];
     let li = '';
     
-    for (var i = 0; list[i]; ++i){
+    for (let i = 0; list[i]; ++i){
         if(list[i].checked){
             listItems[i] = list[i].value;
             li += '<li><a href = "#">' + listItems[i] + ' ' + '</a></li>';
@@ -48,16 +48,16 @@ function getData(){
     //выбор шаблона
     switch(menu) {
         case 'horizontal':
-            menuItem = '<section class="finalPlacementVertical"><nav id="navHorizontal">' + ul + '</nav>';
+            menuItem = `<section class="finalPlacementVertical"><nav id="navHorizontal">${ul}</nav>`
             break;
         case 'verticalLeft':
-            menuItem = '<section class="finalPlacementLeft"><nav id="navVerticalLeft">' + ul + '</nav>';
+            menuItem = `<section class="finalPlacementLeft"><nav id="navVerticalLeft">${ul}</nav>`;
             break;
         case 'verticalRight':
-            menuItem = '<section class="finalPlacementRight"><nav id="navVerticalRight">' + ul + '</nav>';
+            menuItem = `<section class="finalPlacementRight"><nav id="navVerticalRight">${ul}</nav>`;
             break;
         default:
-            menuItem = '<section class="finalPlacement"><nav id="navHorizontal">' + ul + '</nav>';
+            menuItem = `<section class="finalPlacement"><nav id="navHorizontal">${ul}</nav>`;
     };
     newHTML += menuItem;
 
