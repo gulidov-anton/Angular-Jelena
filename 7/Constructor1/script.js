@@ -27,19 +27,19 @@ function getData(){
     document.body.style.backgroundColor = colorTheme;
 
     //cоздание итоговой строки
-    newHTML = '<div id="main"><header><img src="' + LogoImg + '" alt="logo">';
-    newHTML += '<h1>' + title + '</h1>';
-    newHTML += '<h2>' + description + '</h2></header>';
+    newHTML = `<div id="main"><header><img src="${LogoImg}" alt="logo"></div>`;
+    newHTML += `<h1>${title}</h1>`;
+    newHTML += `<h2>${description}</h2></header>`;
 
     //создание строки пунктов меню
     let list = document.constructor.list;
     let listItems = [];
     let li = '';
     
-    for (let i = 0; list[i]; ++i){
-        if(list[i].checked){
+    for (let i = 0; list[i]; ++i) {
+        if(list[i].checked) {
             listItems[i] = list[i].value;
-            li += '<li><a href = "#">' + listItems[i] + ' ' + '</a></li>';
+            li += `<li><a href = "#">${listItems[i]}</a></li>`;
         };
     };
     
@@ -48,7 +48,7 @@ function getData(){
     //выбор шаблона
     switch(menu) {
         case 'horizontal':
-            menuItem = `<section class="finalPlacementVertical"><nav id="navHorizontal">${ul}</nav>`
+            menuItem = `<section class="finalPlacementVertical"><nav id="navHorizontal">${ul}</nav>`;
             break;
         case 'verticalLeft':
             menuItem = `<section class="finalPlacementLeft"><nav id="navVerticalLeft">${ul}</nav>`;
@@ -62,7 +62,7 @@ function getData(){
     newHTML += menuItem;
 
     //основной текстовый блок
-    let p = `<p class = "paragraph" style="color:${colorText}">${mainText}</p></section></div>`;
+    let p = `<p class = "paragraph" style="color:'${colorText}'">${mainText}</p></section></div>`;
     newHTML += p;
 
     document.body.innerHTML = newHTML;
