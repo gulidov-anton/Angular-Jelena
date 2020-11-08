@@ -33,15 +33,14 @@ function getData() {
 
     //создание строки пунктов меню
     let list = document.getElementsByName('list');
-    let listItems = [];
     let li = '';
-    
-    for (let i = 0; list[i]; ++i) {
+
+    for (let i = 0; i < list.length; i++) {
         if(list[i].checked) {
-            listItems[i] = list[i].value;
-            li += `<li><a href = "#">${listItems[i]}</a></li>`;
+            li += `<li><a href = "#">${list[i].value}</a></li>`;
         };
     };
+    newHTML += li;
     
     let menuItem;
 
