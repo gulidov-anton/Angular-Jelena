@@ -4,14 +4,13 @@ let mainTextAddY = document.getElementById("mainTextAddY");
 let mainTextAddN = document.getElementById("mainTextAddN");
 let mainText = document.getElementById("mainText");
 
-mainTextAddY.onclick = function() {
-    mainText.removeAttribute('disabled');
-};
+const onMainTextYClick = () => mainText.removeAttribute('disabled');
 
-mainTextAddN.onclick = function() {
-    mainText.setAttribute('disabled', 'disabled');
-    mainText.style.opacity(0.5);
-};
+
+mainTextAddY.addEventListener('click', onMainTextYClick);
+
+mainTextAddN.addEventListener('click', onMainTextNClick);
+
 
 function getData() {
     let newHTML;
