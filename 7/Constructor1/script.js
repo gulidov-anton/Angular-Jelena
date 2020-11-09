@@ -4,11 +4,11 @@ let mainTextAddY = document.getElementById("mainTextAddY");
 let mainTextAddN = document.getElementById("mainTextAddN");
 let mainText = document.getElementById("mainText");
 
-mainTextAddY.onclick = function(){
+mainTextAddY.onclick = function() {
     mainText.removeAttribute('disabled');
 };
 
-mainTextAddN.onclick = function(){
+mainTextAddN.onclick = function() {
     mainText.setAttribute('disabled', 'disabled');
     mainText.style.opacity(0.5);
 };
