@@ -1,0 +1,38 @@
+<div class="container">
+    <h1>Angular app</h1>
+    <app-post-form (onAdd) = "updatePosts($event)"></app-post-form>
+    <hr> 
+    <app-post *ngFor = "let post of posts" [post] = 'post' (onRemove) = "removePost($event)"></app-post>
+</div>
+<br>
+<hr>
+<br>
+<button (click) = "toggle = !toggle">Кнопка приветствия</button>
+<p *ngIf = "toggle">ПриуЭт</p>
+<p *ngIf = "!toggle"></p>
+<br>
+<hr>
+<br>
+<button (click) = "toggle1 = !toggle1">Стиратель</button>
+<p *ngIf = "toggle1; else otherText">Ничего</p>
+<ng-template #otherText>
+    <p *ngIf = "!toggle1">Всё</p>
+</ng-template>
+<br>
+<hr>
+<br>
+<div [ngSwitch] = toggle2>
+    <p *ngSwitchCase="true">тру</p>
+    <p *ngSwitchCase="false">фолс</p>
+    <p *ngSwitchDefault>дефолт</p>
+</div>
+<br>
+<hr>
+<br>
+<div *ngFor = "let post of posts; let i = index">
+    <b>{{ i+1 }}. </b>{{ post.title }}: {{ post?.text }}
+</div>
+<br>
+<hr>
+<br>
+<p>{{ now | date: 'long' }}</p>
