@@ -1,0 +1,24 @@
+<div class="container">
+  <h1>Directives</h1>
+  <p appStyle = "yellow" [dStyles] = "{ border: '1px solid blue', fontWeight: 'bold' }">Какой-то текст</p>
+  <p appStyle = "yellow" [dStyles] = "{ border: '5px solid red', fontWeight: 'bold' }">Какой-то другой текст</p>
+
+  <div *appIfNot = '!isVisible'>Какой-то другой текст</div>
+
+  <p>
+    {{ e | number }}
+  </p>
+  <p>
+    {{ str | uppercase }}
+  </p>
+  <p>
+    {{ float }}
+  </p>
+  <pre>
+    {{ obj | json }}
+  </pre>
+  <p>
+    {{ 10 | mult: 50 }}
+  </p>
+  <hr>
+  <input type="type" [(ngModel)] = 'search'>
