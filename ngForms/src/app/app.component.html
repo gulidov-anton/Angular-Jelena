@@ -1,0 +1,66 @@
+<div class="container">
+  <form class="card" [formGroup]='form' (ngSubmit)="submit()">
+    <h1>Angular Forms</h1>
+
+    <div class="form-control">
+      <label>Email</label>
+      <br>
+      <input type="text" placeholder="Email" formControlName='email'>
+
+      <div class="validation" *ngIf="form.get('email').invalid && form.get('email').touched">
+        <small *ngIf="form.get('email').errors.required">
+          Can not be empty
+        </small>
+        <small *ngIf="form.get('email').errors.email">
+          Email incorect
+        </small>
+      </div>
+    </div>
+
+    <div class="form-control">
+      <label>Password</label>
+      
+      <input type="password" placeholder="Password" formControlName='password'>
+      <div class="validation" *ngIf="form.get('password').invalid && form.get('password').touched">
+        <small *ngIf="form.get('password').errors.required">
+          Can not be empty
+        </small>
+        <small *ngIf="form.get('password').errors.minLength">
+          Length must be not less than {{ form.get('password').errors.minLength }}
+        </small>
+      </div>
+    </div>
+
+    <div class="card" formGroupMame="address">
+      <h2>Address</h2>
+
+      <div class="form-control">
+        <label>Country</label>
+
+        <select formControlName="country">
+          <option value="ru">Russia</option>
+          <option value="ua">Ukraine</option>
+          <option value="by">Belarus</option>
+        </select>
+      </div>
+
+      <div class="form-control">
+        <input type="text" formControlName="city">
+      </div>
+
+      <button type="button" class='btn' (click)="setCapital()" >Choose the capital</button>
+    </div>
+
+    <div class="card">
+      <h2>Your skills</h2>
+      <button class="btn" (click)="addSkill()">Add skill</button>
+      <div class="form-control" *ngFor="let control of form.get('skills').control; let idx = index">
+        <label>Skill {{ idx + 1 }}</label>
+        <input type="text" [formControlName]="idx">
+      </div>
+    </div>
+
+    <button class="btn" type="submit" [disabled]=form.invalid>Submit</button>
+
+  </form>
+</div>
