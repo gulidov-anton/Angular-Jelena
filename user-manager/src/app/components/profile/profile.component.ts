@@ -1,4 +1,6 @@
+import { Client } from './../../type.d';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-profile',
@@ -6,10 +8,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-
-  constructor() { }
+  clients: Client[];
+  constructor(
+    private route: ActivatedRoute,
+  ) { }
 
   ngOnInit(): void {
+    this.route.params.subscribe(
+      (params: {userId}) => {
+        this.userId = params.userId;
+      }
+    )
   }
-
 }
